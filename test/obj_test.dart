@@ -104,19 +104,16 @@ void main() {
     Professor professor1 = Professor('João');
     Historico historico1 = Historico(disciplina1, professor1, 2023);
     
-    // Cadastrar primeiro aluno sem erros
     Aluno aluno1 = Aluno('Maria', 2023);
     aluno1.id = 1;
     historico1.matricular(aluno1);
     
-    // Adicionar notas ao aluno1
     historico1.adicionarNota(aluno1, 7.0);
     historico1.adicionarNota(aluno1, 8.0);
     
     expect(historico1.media(aluno1), 7.5);
     expect(historico1.isAprovado(aluno1), true);
     
-    // Cadastrar segundo aluno com erros
     Aluno aluno2 = Aluno('Paula', 2022);
     try {
       aluno2.id = 0;
@@ -130,7 +127,6 @@ void main() {
       expect(error, isA<ArgumentError>());
     }
     
-    // Testar aluno não aprovado
     Aluno aluno3 = Aluno('Carlos', 2023);
     aluno3.id = 3;
     historico1.matricular(aluno3);

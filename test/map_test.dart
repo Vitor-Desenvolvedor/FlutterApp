@@ -48,7 +48,6 @@ void main() {
  });
 }
 
-// Calcular médias
 void main() {
  test('Calcular médias', () {
    Map<String, double> medias = {};
